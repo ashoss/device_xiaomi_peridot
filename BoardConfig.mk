@@ -19,10 +19,9 @@ AB_OTA_PARTITIONS += \
     vendor_dlkm \
     dtbo \
     system_ext \
-    vendor_boot \
     recovery \
     system_dlkm
-BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 
 # Architecture
 TARGET_ARCH := arm64
