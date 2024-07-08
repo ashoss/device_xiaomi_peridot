@@ -48,6 +48,10 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.xiaomi
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
@@ -58,6 +62,12 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.3.vendor \
+    android.hardware.power-service.lineage-libperfmgr \
+    libqti-perfd-client
 
 # Product characteristics
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -126,4 +136,9 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/xiaomi \
+    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/qcom-caf/common/libqti-perfd-client \
+    hardware/google/interfaces \
+    hardware/google/pixel

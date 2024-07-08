@@ -42,6 +42,7 @@ TARGET_NO_BOOTLOADER := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 RELAX_USES_LIBRARY_CHECK=true
 
 # Display
@@ -142,6 +143,11 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2024-04-01
+
+# Sepolicy
+include device/lineage/sepolicy/libperfmgr/sepolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
